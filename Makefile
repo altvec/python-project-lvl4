@@ -7,6 +7,9 @@ install: .env
 start:
 	@poetry run python manage.py runserver --noreload
 
+shell:
+	@poetry run python manage.py shell
+
 lint:
 	@poetry run flake8
 
