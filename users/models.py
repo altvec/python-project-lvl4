@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib.auth.models import AbstractUser
-from django.db import models
 
 
 class CustomUser(AbstractUser):
     """Model representing a user account."""
-    pass
 
     def __str__(self):
+        """String representation of user model."""
         return self.username

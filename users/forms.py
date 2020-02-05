@@ -1,11 +1,14 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib.auth import forms
+
 from users.models import CustomUser
 
 
 class UserCreationForm(forms.UserCreationForm):
     """User creation form."""
 
-    class Meta:
+    class Meta(forms.UserCreationForm.Meta):
         model = CustomUser
         fields = ('username', 'email')
 
@@ -13,6 +16,6 @@ class UserCreationForm(forms.UserCreationForm):
 class UserChangeForm(forms.UserChangeForm):
     """User change form."""
 
-    class Meta:
+    class Meta(forms.UserChangeForm.Meta):
         model = CustomUser
         fields = ('username', 'email')

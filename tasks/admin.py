@@ -2,8 +2,7 @@
 
 from django.contrib import admin  # noqa: F401
 
-# Register your models here.
-from .models import Task, Tag
+from tasks.models import Tag, Task
 
-admin.site.register(Task)
 admin.site.register(Tag)
+admin.site.register(Task)
