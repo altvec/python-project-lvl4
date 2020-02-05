@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
+from tasks.models import Task
 
 
-def home(request):  # noqa: D103
-    return render(request, 'home.html')
+def home(request):
+    context = {
+        'tasks': Task.objects.all(),
+    }
+    return render(request, 'tasks/main.html', context)

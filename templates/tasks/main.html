@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main role="main">
+  <table class="table table-hover table-dark text-left">
+    <thead>
+      <tr>
+        <th scope="col">Task creator</th>
+        <th scope="col">Assigned to</th>
+        <th scope="col">Task name</th>
+        <th scope="col">Task description</th>
+        <th scope="col">Task tags</th>
+        <th scope="col">Task status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+      <tr>
+        <td>{{ task.creator }}</td>
+        <td>{{ task.assigned_to }}</td>
+        <td>{{ task.name }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.get_tags_list }}</td>
+        <td>{{ task.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</main>
+
+{% endblock %}
