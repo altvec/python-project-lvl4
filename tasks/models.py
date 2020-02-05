@@ -33,5 +33,11 @@ class Task(models.Model):
     )
     status = models.CharField(max_length=20, choices=STATUSES, default='new')
 
+    def get_tags_list(self):
+        tags = []
+        for tag in self.tags.all():
+            tags.append(tag.name)
+        return ', '.join(tags)
+
     def __str__(self):
         return self.name
