@@ -48,13 +48,6 @@ class Task(models.Model):
         default='new',
     )
 
-    def get_tags_list(self):
-        """Get tags list for a task."""
-        tags = []
-        for tag in self.tags.all():
-            tags.append(tag.name)
-        return ', '.join(tags)
-
     def __str__(self):
         """String representation of task object."""
         return self.name
