@@ -9,7 +9,7 @@ class TaskListView(ListView):
     """A view for list of tasks."""
 
     model = Task
-    template_name = 'tasks/main.html'
+    template_name = 'home.html'
     context_object_name = 'tasks'
     ordering = ['-pk']
 
@@ -18,4 +18,4 @@ class TaskDetailView(DetailView):
     """Task details view."""
 
     model = Task
-    template_name = 'tasks/task_detail.html'
+    template_name = 'task_detail.html'
