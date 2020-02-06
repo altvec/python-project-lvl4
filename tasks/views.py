@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
+from django.views.generic import ListView
 
 from tasks.models import Task
 
 
-def home(request):
-    """Simple home view with list of all tasks."""
-    context = {
-        'tasks': Task.objects.all(),
-    }
-    return render(request, 'tasks/main.html', context)
+class TaskListView(ListView):
+    """A view for list of tasks."""
+
+    model = Task
+    template_name = 'tasks/main.html'
+    context_object_name = 'tasks'
+    ordering = ['-pk']
