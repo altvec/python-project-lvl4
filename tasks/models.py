@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models  # noqa: F401
+from django.urls import reverse
 
 from users.models import CustomUser
 
@@ -51,3 +52,7 @@ class Task(models.Model):
     def __str__(self):
         """String representation of task object."""
         return self.name
+
+    def get_absolute_url(self):
+        """Get absolute URL for created task."""
+        return reverse('task-detail', kwargs={'pk': self.id})
