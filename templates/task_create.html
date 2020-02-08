@@ -1,10 +1,15 @@
 {% extends 'layout.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
-<h1>New post</h1>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Create</button>
-</form>
+<main role="main" class="my-3">
+  <h2>New post</h2>
+  <form method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Create</button>
+    {% endbuttons %}
+  </form>
+</main>
 {% endblock %}

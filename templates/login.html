@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
 <div class="container">
@@ -9,8 +10,10 @@
     <div class="card-body">
       <form class="form" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootstrap_form form %}
+        {% buttons %}
         <button class="btn btn-primary" type="submit">Login</button>
+        {% endbuttons %}
       </form>
     </div>
   </div>
