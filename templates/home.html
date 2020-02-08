@@ -3,32 +3,43 @@
 {% block content %}
 
 <main role="main">
-  <div class="table-responsive">
-    <table class="table table-hover table-dark text-left">
-      <thead>
-        <tr>
-          <th scope="col">Task name</th>
-          <th scope="col">Task tags</th>
-        <th scope="col">Task status</th>
-        <th scope="col">Assigned to</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for task in tasks %}
-        <tr>
-        <td><a href="{% url 'task-detail' task.id %}">{{ task.name }}</a></td>
-        <td>
-          {% for tag in task.tags.all %}
-          <span class="badge badge-secondary"><a href="#">{{ tag }}</a></span>
-          {% endfor %}
-        </td>
-        <td>{{ task.status }}</td>
-        <td>{{ task.assigned_to }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+  <ul class="list-unstyled">
+    {% for task in tasks %}
+    <li class="my-4">
+      <div class="card bg-dark">
+        <div class="card-header">
+          <div class="d-flex">
+            <div class="flex-grow-1 flex-fill">
+              <a href="{% url 'task-detail' task.id %}">{{ task.name }}</a>
+            </div>
+            <div>
+              <small class="text-muted"> by {{ task.creator }}</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ task.description }}</p>
+          <small class="text-muted">Assigned to: {{ task.assigned_to }}</small>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex">
+            <div class="flex-grow-1 flex-fill">
+              Tags:
+              {% for tag in task.tags.all %}
+              <span class="badge badge-secondary">
+                <a href="#">{{ tag }}</a>
+              </span>
+              {% endfor %}
+            </div>
+            <div>
+                Status: {{ task.status }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </main>
 
 {% endblock %}

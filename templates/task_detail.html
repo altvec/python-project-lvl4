@@ -3,11 +3,42 @@
 {% block content %}
 
 <main role="main">
-  <h2>{{ task.name }}</h2>
-  <h3>{{ task.description }}</h3>
-  {% if object.creator == user %}
-  <span><a href="{% url 'task-delete' object.id %}">Delete!</a></span>
-  <span><a href="{% url 'task-update' object.id %}">Update!</a></span>
-  {% endif %}
+  <div class="card bg-dark">
+    <div class="card-header">
+      <div class="d-flex">
+        <div class="flex-grow-1 flex-fill">
+          <a href="{% url 'task-detail' task.id %}">{{ task.name }}</a>
+        </div>
+        <div>
+          <small class="text-muted"> by {{ task.creator }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ task.description }}</p>
+      <small class="text-muted">Assigned to: {{ task.assigned_to }}</small>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex">
+        <div class="flex-grow-1 flex-fill">
+          Tags:
+          {% for tag in task.tags.all %}
+          <span class="badge badge-secondary">
+            <a href="#">{{ tag }}</a>
+          </span>
+          {% endfor %}
+        </div>
+        <div>
+          Status: {{ task.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-2">
+    {% if object.creator == user %}
+    <a class="btn btn-outline-primary" href="{% url 'task-update' object.id %}" role="button">Update</a>
+    <a class="btn btn-outline-danger" href="{% url 'task-delete' object.id %}" role="button">Delete</a>
+    {% endif %}
+  </div>
 </main>
 {% endblock %}
