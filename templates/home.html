@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
 <main role="main">
   <ul class="list-unstyled">
     {% for task in tasks %}
@@ -32,7 +31,7 @@
               {% endfor %}
             </div>
             <div>
-                Status: {{ task.status }}
+                Status: {{ task.get_status_display }}
             </div>
           </div>
         </div>
@@ -41,5 +40,4 @@
     {% endfor %}
   </ul>
 </main>
-
 {% endblock %}
