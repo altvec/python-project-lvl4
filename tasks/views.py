@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, DetailView, ListView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DeleteView, DetailView, ListView
 
 from tasks.models import Task
 
@@ -33,3 +34,16 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
         """Validate form."""
         form.instance.creator = self.request.user
         return super().form_valid(form)
+
+
+class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Task delete view."""
+
+    model = Task
+    success_url = reverse_lazy('tasks-home')
+    template_name = 'task_confirm_delete.html'
+
+    def test_func(self):
+        """Test task ownership before deleting."""
+        task = self.get_object()
+        return self.request.user == task.creator

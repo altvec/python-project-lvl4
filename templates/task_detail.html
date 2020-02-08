@@ -5,5 +5,8 @@
 <main role="main">
   <h2>{{ task.name }}</h2>
   <h3>{{ task.description }}</h3>
+  {% if object.creator == user %}
+  <span><a href="{% url 'task-delete' object.id %}">Delete!</a></span>
+  {% endif %}
 </main>
 {% endblock %}
