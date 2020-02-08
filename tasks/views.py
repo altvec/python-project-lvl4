@@ -2,7 +2,13 @@
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, DetailView, ListView
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
 
 from tasks.models import Task
 
@@ -45,5 +51,23 @@ class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         """Test task ownership before deleting."""
+        task = self.get_object()
+        return self.request.user == task.creator
+
+
+class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """Task update view."""
+
+    model = Task
+    fields = ['name', 'description', 'tags', 'assigned_to', 'status']
+    template_name = 'task_create.html'
+
+    def form_valid(self, form):
+        """Validate form."""
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        """Test task ownership berfore updating."""
         task = self.get_object()
         return self.request.user == task.creator
