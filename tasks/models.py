@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.db import models  # noqa: F401
+from django.db import models
 from django.urls import reverse
 
 from users.models import CustomUser
@@ -24,7 +24,7 @@ class Task(models.Model):
     description_length = 512
     status_length = 20
     statuses = (
-        ('new', 'New task'),
+        ('new', 'New'),
         ('in_progress', 'In progress'),
         ('testing', 'In testing'),
         ('completed', 'Completed'),
