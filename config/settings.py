@@ -150,3 +150,6 @@ ROLLBAR = {
     'environment': 'development' if DEBUG else 'production',
     'root': BASE_DIR,
 }
+
+LOGIN_REDIRECT_URL = 'tasks-home'
+LOGOUT_REDIRECT_URL = 'tasks-home'
