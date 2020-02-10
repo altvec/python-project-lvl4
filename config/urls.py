@@ -20,6 +20,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
 
+from users.views import register_user
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tasks.urls')),
@@ -32,5 +34,10 @@ urlpatterns = [
         'logout/',
         auth_views.LogoutView.as_view(template_name='logout.html'),
         name='logout',
+    ),
+    path(
+        'register/',
+        register_user,
+        name='register',
     ),
 ]
