@@ -10,6 +10,10 @@ start:
 shell:
 	@poetry run python manage.py shell
 
+migrations:
+	@poetry run python manage.py makemigrations
+	@poetry run python manage.py migrate
+
 lint:
 	@poetry run flake8
 
@@ -19,4 +23,4 @@ test:
 requirements.txt: poetry.lock
 	@poetry export --format requirements.txt --output requirements.txt
 
-.PHONY: install start lint
+.PHONY: install start lint shell migrations test
