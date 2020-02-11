@@ -9,7 +9,7 @@ from users.models import CustomUser
 class Tag(models.Model):
     """Model representing a tag."""
 
-    name_length = 128
+    name_length = 50
     name = models.CharField(max_length=name_length, unique=True)
 
     def __str__(self):
