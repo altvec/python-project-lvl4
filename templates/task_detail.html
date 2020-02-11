@@ -35,7 +35,8 @@
   </div>
   <div class="p-2">
     {% if object.creator == user %}
-    <a class="btn btn-outline-primary" href="{% url 'task-update' object.id %}" role="button">Update</a>
+    <a class="btn btn-outline-primary" href="{% url 'task-update' object.id %}" role="button">Edit</a>
+    <a class="btn btn-outline-secondary" href="{% url 'tasks-home' %}" role="button">Back</a>
     <a class="btn btn-outline-danger" href="{% url 'task-delete' object.id %}" role="button">Delete</a>
     {% endif %}
   </div>
