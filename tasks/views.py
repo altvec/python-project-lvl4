@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import (
     CreateView,
@@ -29,12 +30,14 @@ class TaskDetailView(DetailView):
     template_name = 'task_detail.html'
 
 
-class TaskCreateView(LoginRequiredMixin, CreateView):
+class TaskCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """Task create view."""
 
     model = Task
     fields = ['name', 'description', 'tags', 'assigned_to', 'status']
     template_name = 'task_create.html'
+    success_url = reverse_lazy('tasks-home')
+    success_message = 'Task %(name)s was created successfully.'
 
     def form_valid(self, form):
         """Validate form."""
