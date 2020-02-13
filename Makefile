@@ -17,10 +17,13 @@ migrations:
 lint:
 	@poetry run flake8
 
+seed_statuses:
+	@poetry run python manage.py loaddata ./tasks/fixtures/task_statuses.json
+
 test:
 	@poetry run python manage.py test
 
 requirements.txt: poetry.lock
 	@poetry export --format requirements.txt --output requirements.txt
 
-.PHONY: install start lint shell migrations test
+.PHONY: install start lint seed_statuses shell migrations test
