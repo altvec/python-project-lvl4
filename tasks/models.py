@@ -17,18 +17,27 @@ class Tag(models.Model):
         return self.name
 
 
+class TaskStatus(models.Model):
+    """Model representing a task status."""
+
+    name_length = 50
+    default_state = 'New'
+    name = models.CharField(
+        max_length=name_length,
+        default=default_state,
+        unique=True,
+    )
+
+    def __str__(self):
+        """String representation of task status object."""
+        return self.name
+
+
 class Task(models.Model):
     """Model representing a task."""
 
     name_length = 128
     description_length = 512
-    status_length = 20
-    statuses = (
-        ('new', 'New'),
-        ('in_progress', 'In progress'),
-        ('testing', 'In testing'),
-        ('completed', 'Completed'),
-    )
 
     name = models.CharField(max_length=name_length)
     description = models.TextField(max_length=description_length)
@@ -43,10 +52,10 @@ class Task(models.Model):
         on_delete=models.CASCADE,
         related_name='tasks_assigned_to',
     )
-    status = models.CharField(
-        max_length=status_length,
-        choices=statuses,
-        default='new',
+    status = models.ForeignKey(
+        TaskStatus,
+        on_delete=models.CASCADE,
+        related_name='task_status',
     )
 
     def __str__(self):

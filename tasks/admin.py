@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from tasks.models import Tag, Task
+from tasks.models import Tag, Task, TaskStatus
 
 
 class TaskAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ class TaskAdmin(admin.ModelAdmin):
 
 admin.site.register(Tag)
 admin.site.register(Task, TaskAdmin)
+admin.site.register(TaskStatus)
