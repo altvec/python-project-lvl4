@@ -5,6 +5,7 @@ from django.contrib import admin
 from tasks.models import Tag, Task, TaskStatus
 
 
+@admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     """Display tasks in admin interface."""
 
@@ -12,5 +13,4 @@ class TaskAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tag)
-admin.site.register(Task, TaskAdmin)
 admin.site.register(TaskStatus)
