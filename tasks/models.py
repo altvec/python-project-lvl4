@@ -12,6 +12,10 @@ class Tag(models.Model):
     name_length = 50
     name = models.CharField(max_length=name_length, unique=True)
 
+    class Meta(object):
+        verbose_name = 'tag'
+        verbose_name_plural = 'tags'
+
     def __str__(self):
         """String representation of tag object."""
         return self.name
@@ -27,6 +31,10 @@ class TaskStatus(models.Model):
         default=default_state,
         unique=True,
     )
+
+    class Meta(object):
+        verbose_name = 'task status'
+        verbose_name_plural = 'task statuses'
 
     def __str__(self):
         """String representation of task status object."""
@@ -57,6 +65,10 @@ class Task(models.Model):
         on_delete=models.CASCADE,
         related_name='task_status',
     )
+
+    class Meta(object):
+        verbose_name = 'task'
+        verbose_name_plural = 'tasks'
 
     def __str__(self):
         """String representation of task object."""
