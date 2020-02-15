@@ -11,7 +11,7 @@ from django.views.generic import (
     UpdateView,
 )
 
-from tasks.models import Task
+from tasks.models import Task, TaskStatus
 
 
 class TaskListView(ListView):
@@ -74,3 +74,12 @@ class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """Test task ownership berfore updating."""
         task = self.get_object()
         return self.request.user == task.creator
+
+
+class TaskStatusListView(ListView):
+    """A view for list of task statuses."""
+
+    model = TaskStatus
+    template_name = 'task_status_list.html'
+    context_object_name = 'statuses'
+    ordering = ['pk']
