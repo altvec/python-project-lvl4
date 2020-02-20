@@ -10,7 +10,9 @@ from django.views.generic import (
     ListView,
     UpdateView,
 )
+from django.views.generic.edit import FormMixin
 
+from tasks.forms import TaskStatusForm
 from tasks.models import Task, TaskStatus
 
 
@@ -76,10 +78,26 @@ class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == task.creator
 
 
-class TaskStatusListView(ListView):
-    """A view for list of task statuses."""
+class TaskStatusView(FormMixin, ListView):
+    """A view for task statuses."""
 
     model = TaskStatus
-    template_name = 'task_status_list.html'
+    template_name = 'task_statuses.html'
+    form_class = TaskStatusForm
     context_object_name = 'statuses'
-    ordering = ['pk']
+
+    def get_success_url(self):  # noqa: D102
+        return reverse_lazy('statuses')
+
+    def get_queryset(self):  # noqa: D102
+        return TaskStatus.objects.all()
+
+    def post(self, request, *args, **kwargs):  # noqa: D102
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        return self.form_invalid(form)
+
+    def form_valid(self, form):  # noqa: D102
+        TaskStatus.objects.create(name=form.cleaned_data['name'])
+        return super().form_valid(form)

@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<main role="main" class="my-3">
+  <h3>Add new status</h3>
+  <form method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Add</button>
+    {% endbuttons %}
+  </form>
+
+  <h2>Available task statuses</h2>
+  <ul class="list-group">
+    {% for status in statuses %}
+    <li class="list-group-item d-flex justify-content-between align-items-center bg-dark">
+      <div class="d-flex w-100">
+        {{ status }}
+      </div>
+      <div class="btn-group" role="group">
+        <a class="btn btn-outline-secondary" href="#" role="button">Edit</a>
+        <a class="btn btn-outline-secondary" href="#" role="button">Delete</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+{% endblock %}
