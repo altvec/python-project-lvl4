@@ -109,3 +109,16 @@ class TaskStatusDeleteView(LoginRequiredMixin, DeleteView):
     model = TaskStatus
     success_url = reverse_lazy('statuses')
     template_name = 'taskstatus_confirm_delete.html'
+
+
+class TaskStatusUpdateView(LoginRequiredMixin, UpdateView):
+    """TaskStatus update view."""
+
+    model = TaskStatus
+    fields = ['name']
+    template_name = 'taskstatus_edit.html'
+
+    def form_valid(self, form):
+        """Validate form."""
+        form.instance.creator = self.request.user
+        return super().form_valid(form)

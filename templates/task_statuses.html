@@ -20,7 +20,7 @@
         {{ status }}
       </div>
       <div class="btn-group" role="group">
-        <a class="btn btn-outline-secondary" href="#" role="button">Edit</a>
+        <a class="btn btn-outline-secondary" href="{% url 'status-update' status.id %}" role="button">Edit</a>
         <a class="btn btn-outline-secondary" href="{% url 'status-delete' status.id %}" role="button">Delete</a>
       </div>
     </li>
