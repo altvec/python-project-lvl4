@@ -2,23 +2,9 @@
 
 from django.db import models
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 from users.models import CustomUser
-
-
-class Tag(models.Model):
-    """Model representing a tag."""
-
-    name_length = 50
-    name = models.CharField(max_length=name_length, unique=True)
-
-    class Meta(object):
-        verbose_name = 'tag'
-        verbose_name_plural = 'tags'
-
-    def __str__(self):
-        """String representation of tag object."""
-        return self.name
 
 
 class TaskStatus(models.Model):
@@ -49,7 +35,7 @@ class Task(models.Model):
 
     name = models.CharField(max_length=name_length)
     description = models.TextField(max_length=description_length)
-    tags = models.ManyToManyField(Tag, related_name='tasks')
+    tags = TaggableManager()
     creator = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,

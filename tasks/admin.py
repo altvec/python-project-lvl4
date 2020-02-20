@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from tasks.models import Tag, Task, TaskStatus
+from tasks.models import Task, TaskStatus
 
 
 @admin.register(Task)
@@ -14,5 +14,4 @@ class TaskAdmin(admin.ModelAdmin):
     search_fileds = ('name', 'description')
 
 
-admin.site.register(Tag)
 admin.site.register(TaskStatus)

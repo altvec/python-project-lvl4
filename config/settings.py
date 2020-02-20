@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'users.apps.UsersConfig',
     'tasks.apps.TasksConfig',
+    'taggit',
 ]
 
 MIDDLEWARE = [
