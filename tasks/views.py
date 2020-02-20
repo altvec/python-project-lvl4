@@ -24,6 +24,13 @@ class TaskListView(ListView):
     context_object_name = 'tasks'
     ordering = ['-pk']
 
+    def get_queryset(self):
+        """Filter by tag if it is provided in GET parameters."""
+        queryset = Task.objects.all()
+        if self.request.GET.get('tags'):
+            queryset = queryset.filter(tags=self.request.GET.get('tags'))
+        return queryset
+
 
 class TaskDetailView(DetailView):
     """Task details view."""

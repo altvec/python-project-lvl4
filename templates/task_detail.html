@@ -23,7 +23,7 @@
           Tags:
           {% for tag in task.tags.all %}
           <span class="badge badge-secondary">
-            <a href="#">{{ tag }}</a>
+            {{ tag }}
           </span>
           {% endfor %}
         </div>
