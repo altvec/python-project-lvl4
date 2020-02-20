@@ -16,30 +16,29 @@ from tasks.forms import TaskStatusForm
 from tasks.models import Task, TaskStatus
 
 
-class TaskListView(ListView):
+class TaskList(ListView):
     """A view for list of tasks."""
 
     model = Task
     template_name = 'home.html'
     context_object_name = 'tasks'
-    ordering = ['-pk']
 
     def get_queryset(self):
         """Filter by tag if it is provided in GET parameters."""
-        queryset = Task.objects.all()
+        queryset = Task.objects.all().order_by("-pk")
         if self.request.GET.get('tags'):
             queryset = queryset.filter(tags=self.request.GET.get('tags'))
         return queryset
 
 
-class TaskDetailView(DetailView):
+class TaskDetail(DetailView):
     """Task details view."""
 
     model = Task
     template_name = 'task_detail.html'
 
 
-class TaskCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
+class TaskCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """Task create view."""
 
     model = Task
@@ -54,7 +53,7 @@ class TaskCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class TaskDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """Task delete view."""
 
     model = Task
@@ -67,7 +66,7 @@ class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == task.creator
 
 
-class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class TaskUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Task update view."""
 
     model = Task
@@ -85,7 +84,7 @@ class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == task.creator
 
 
-class TaskStatusView(FormMixin, ListView):
+class TaskStatusList(FormMixin, ListView):
     """A view for task statuses."""
 
     model = TaskStatus
@@ -110,7 +109,7 @@ class TaskStatusView(FormMixin, ListView):
         return super().form_valid(form)
 
 
-class TaskStatusDeleteView(LoginRequiredMixin, DeleteView):
+class TaskStatusDelete(LoginRequiredMixin, DeleteView):
     """TaskStatus delete view."""
 
     model = TaskStatus
@@ -118,7 +117,7 @@ class TaskStatusDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'taskstatus_confirm_delete.html'
 
 
-class TaskStatusUpdateView(LoginRequiredMixin, UpdateView):
+class TaskStatusUpdate(LoginRequiredMixin, UpdateView):
     """TaskStatus update view."""
 
     model = TaskStatus

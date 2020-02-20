@@ -3,32 +3,32 @@
 from django.urls import path
 
 from tasks.views import (
-    TaskCreateView,
-    TaskDeleteView,
-    TaskDetailView,
-    TaskListView,
-    TaskStatusDeleteView,
-    TaskStatusUpdateView,
-    TaskStatusView,
-    TaskUpdateView,
+    TaskCreate,
+    TaskDelete,
+    TaskDetail,
+    TaskList,
+    TaskStatusDelete,
+    TaskStatusList,
+    TaskStatusUpdate,
+    TaskUpdate,
 )
 
 urlpatterns = [
-    path('', TaskListView.as_view(), name='tasks-home'),
-    path('task/<int:pk>/', TaskDetailView.as_view(), name='task-detail'),
-    path('task/new/', TaskCreateView.as_view(), name='task-create'),
-    path('task/<int:pk>/update/', TaskUpdateView.as_view(), name='task-update'),
-    path('task/<int:pk>/delete/', TaskDeleteView.as_view(), name='task-delete'),
-    path('status/', TaskStatusView.as_view(), name='statuses'),
-    path('status/new/', TaskStatusView.as_view(), name='status-create'),
+    path('', TaskList.as_view(), name='tasks-home'),
+    path('task/<int:pk>/', TaskDetail.as_view(), name='task-detail'),
+    path('task/new/', TaskCreate.as_view(), name='task-create'),
+    path('task/<int:pk>/update/', TaskUpdate.as_view(), name='task-update'),
+    path('task/<int:pk>/delete/', TaskDelete.as_view(), name='task-delete'),
+    path('status/', TaskStatusList.as_view(), name='statuses'),
+    path('status/new/', TaskStatusList.as_view(), name='status-create'),
     path(
         'status/<int:pk>/delete/',
-        TaskStatusDeleteView.as_view(),
+        TaskStatusDelete.as_view(),
         name='status-delete',
     ),
     path(
         'status/<int:pk>/update/',
-        TaskStatusUpdateView.as_view(),
+        TaskStatusUpdate.as_view(),
         name='status-update',
     ),
 ]
