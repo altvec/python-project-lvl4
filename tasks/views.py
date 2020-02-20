@@ -101,3 +101,11 @@ class TaskStatusView(FormMixin, ListView):
     def form_valid(self, form):  # noqa: D102
         TaskStatus.objects.create(name=form.cleaned_data['name'])
         return super().form_valid(form)
+
+
+class TaskStatusDeleteView(LoginRequiredMixin, DeleteView):
+    """TaskStatus delete view."""
+
+    model = TaskStatus
+    success_url = reverse_lazy('statuses')
+    template_name = 'taskstatus_confirm_delete.html'
