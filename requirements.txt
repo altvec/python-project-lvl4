@@ -20,6 +20,9 @@ django==3.0.3 \
 django-bootstrap4==1.1.1 \
     --hash=sha256:39f97cbce85eb66f6d76be2029bae171bd3863d0c6932b1c2dae7f299c569b90 \
     --hash=sha256:0fcd84f8414a58b43df0b331c00c8b2f1786ae28f75f419b4d33b06fca43e0d1
+django-filter==2.2.0 \
+    --hash=sha256:c3deb57f0dd7ff94d7dce52a047516822013e2b441bed472b722a317658cfd14 \
+    --hash=sha256:558c727bce3ffa89c4a7a0b13bc8976745d63e5fd576b3a9a851650ef11c401b
 django-taggit==1.2.0 \
     --hash=sha256:4186a6ce1e1e9af5e2db8dd3479c5d31fa11a87d216a2ce5089ba3afde24a2c5 \
     --hash=sha256:bd1ec80b813d60adadaa94dcce4bfd971cb4ae717b07e69fedbd38d417deb6e9
