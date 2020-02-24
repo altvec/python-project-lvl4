@@ -12,6 +12,7 @@ from django.views.generic import (
 )
 from django.views.generic.edit import FormMixin
 
+from tasks.filters import TaskFilter
 from tasks.forms import TaskStatusForm
 from tasks.models import Task, TaskStatus
 
@@ -25,10 +26,19 @@ class TaskList(ListView):
 
     def get_queryset(self):
         """Filter by tag if it is provided in GET parameters."""
-        queryset = Task.objects.all().order_by("-pk")
+        queryset = Task.objects.all().order_by('-pk')
         if self.request.GET.get('tags'):
-            queryset = queryset.filter(tags=self.request.GET.get('tags'))
+            queryset = queryset.filter(tags__name=self.request.GET.get('tags'))
         return queryset
+
+    def get_context_data(self, **kwargs):
+        """Get filtered data if it's provided by requests."""
+        context = super().get_context_data(**kwargs)
+        context['filter'] = TaskFilter(
+            self.request.GET,
+            queryset=self.get_queryset(),
+        )
+        return context
 
 
 class TaskDetail(DetailView):
@@ -102,7 +112,6 @@ class TaskStatusList(FormMixin, ListView):
         form = self.get_form()
         if form.is_valid():
             return self.form_valid(form)
-        return self.form_invalid(form)
 
     def form_valid(self, form):  # noqa: D102
         TaskStatus.objects.create(name=form.cleaned_data['name'])
