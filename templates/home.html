@@ -1,43 +1,56 @@
 {% extends 'layout.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
 <main role="main">
+  <div class="jumbotron bg-dark my-4 py-4">
+    <div class="container">
+      <h2 class="display-5">Filter tasks</h2>
+      <form class="form" method="get">
+        {% bootstrap_form filter.form %}
+        {% buttons %}
+        <button class="btn btn-primary" type="submit">Search</button>
+        <a class="btn btn-danger" href="{% url 'tasks-home' %}">Reset</a>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
   <ul class="list-unstyled">
-    {% for task in tasks %}
+    {% for obj in filter.qs %}
     <li class="my-4">
       <div class="card bg-dark">
         <div class="card-header">
           <div class="d-flex">
             <div class="flex-grow-1 flex-fill">
-              <a href="{% url 'task-detail' task.id %}">{{ task.name }}</a>
+              <a href="{% url 'task-detail' obj.id %}">{{ obj.name }}</a>
             </div>
             <div>
-              <small class="text-muted"> by {{ task.creator }}</small>
+              <small class="text-muted">by {{ obj.creator }}</small>
             </div>
           </div>
         </div>
         <div class="card-body">
-          <p class="card-text">{{ task.description }}</p>
-          <small class="text-muted">Assigned to: {{ task.assigned_to }}</small>
+          <p class="card-text">{{ obj.description }}</p>
+          <small class="text-muted">Assigned to: {{ obj.assigned_to }}</small>
         </div>
         <div class="card-footer">
           <div class="d-flex">
             <div class="flex-grow-1 flex-fill">
               Tags:
-              {% for tag in task.tags.all %}
+              {% for tag in obj.tags.all %}
               <span class="badge badge-secondary">
-                <a href="{% url 'tasks-home' %}?tags={{ tag.id|default:'' }}">{{ tag }}</a>
+                <a href="{% url 'tasks-home' %}?tags={{ tag.name|default:'' }}">{{ tag }}</a>
               </span>
               {% endfor %}
             </div>
             <div>
-                Status: {{ task.status }}
+              Status: {{ obj.status }}
             </div>
           </div>
         </div>
       </div>
     </li>
-    {% endfor %}
+  {% endfor %}
   </ul>
 </main>
 {% endblock %}
