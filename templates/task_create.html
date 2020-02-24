@@ -39,7 +39,7 @@
     </div>
     <div class="form-group">
       <label for="tags">Tags</label>
-      <input type="text" class="form-control" name="tags" id="tags">
+      <input type="text" class="form-control" name="tags" id="tags" value="{{ form.tags.value|join:', '|default_if_none:'' }}">
       <small class="form-text text-muted">Enter tags separated by comma</small>
     </div>
     {% buttons %}
