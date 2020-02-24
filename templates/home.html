@@ -7,7 +7,38 @@
     <div class="container">
       <h2 class="display-5">Filter tasks</h2>
       <form class="form" method="get">
-        {% bootstrap_form filter.form %}
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="creator">Creator</label>
+            <select class="form-control" id="creator" name="creator">
+              {% for creator in filter.form.creator %}
+                {{ creator }}
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="assigned_to">Assigned to</label>
+            <select class="form-control" id="assigned_to" name="assigned_to">
+              {% for assignee in filter.form.assigned_to %}
+                {{ assignee }}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status">
+              {% for st in filter.form.status %}
+                {{ st }}
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="tags">Tags</label>
+            <input type="text" class="form-control" name="tags" id="tags" value="{{ filter.form.tags.value|default_if_none:'' }}">
+          </div>
+        </div>
         {% buttons %}
         <button class="btn btn-primary" type="submit">Search</button>
         <a class="btn btn-danger" href="{% url 'tasks-home' %}">Reset</a>
