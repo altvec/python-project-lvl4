@@ -6,9 +6,9 @@
   <h3>Add new status</h3>
   <form method="post" class="form">
     {% csrf_token %}
-    {% bootstrap_form form %}
+    {% bootstrap_form form layout='inline' %}
     {% buttons %}
-    <button type="submit" class="btn btn-primary">Add</button>
+    {% bootstrap_button "Add" button_type="submit" button_class="btn btn-primary" %}
     {% endbuttons %}
   </form>
 
