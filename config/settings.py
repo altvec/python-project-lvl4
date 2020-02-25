@@ -38,7 +38,6 @@ ALLOWED_HOSTS = [
     '.herokuapp.com',
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'tasks.context_processors.settings_processor',
             ],
         },
     },
@@ -145,6 +145,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Application settings
+APP_NAME = 'Task Manager'
+APP_DESCRIPTION = 'Minimal task manager app'
+APP_HOST = 'https://tm.skali.dev'
 
 # Rollbar settigns
 ROLLBAR = {
