@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 {% load bootstrap4 %}
 
+{% block title %}{{ block.super }} — {{ "New Task" }}{% endblock %}
+
 {% block content %}
 <main role="main" class="my-3">
   <h2>Create new task</h2>
