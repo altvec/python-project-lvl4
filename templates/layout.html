@@ -2,32 +2,13 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>Home</title>
+    {% block meta %}{% include "components/meta.html" %}{% endblock %}
+    {% block og %}{% include "components/og.html" %}{% endblock %}
+    <title>{% block title %}{{ settings.APP_NAME }}{% endblock %}</title>
     {% bootstrap_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-
-    <style>
-     .bd-placeholder-img {
-         font-size: 1.125rem;
-         text-anchor: middle;
-         -webkit-user-select: none;
-         -moz-user-select: none;
-         -ms-user-select: none;
-         user-select: none;
-     }
-
-     @media (min-width: 768px) {
-         .bd-placeholder-img-lg {
-             font-size: 3.5rem;
-         }
-     }
-    </style>
-
+    {% include "components/favicon.html" %}
   </head>
-
   <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
@@ -36,7 +17,6 @@
           {% include 'components/navigation.html' %}
         </div>
       </header>
-
       {% if messages %}
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissable my-2">
@@ -47,7 +27,6 @@
         </div>
         {% endfor %}
       {% endif %}
-
       {% block content %}{% endblock %}
       {% include 'components/footer.html' %}
     </div>

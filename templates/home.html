@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 {% load bootstrap4 %}
 
+{% block title %}{{ block.super }} — {{ "Dashboard" }}{% endblock %}
+
 {% block content %}
 <main role="main">
   <div class="jumbotron bg-dark my-4 py-4">
