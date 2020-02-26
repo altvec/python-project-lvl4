@@ -21,7 +21,9 @@ seed_statuses:
 	@poetry run python manage.py loaddata ./tasks/fixtures/task_statuses.json
 
 test:
-	@poetry run python manage.py test
+	@coverage run --omit '.venv/*' --source '.' manage.py test -v 2
+	@coverage report
+	@coverage xml
 
 requirements.txt: poetry.lock
 	@poetry export --format requirements.txt --output requirements.txt
