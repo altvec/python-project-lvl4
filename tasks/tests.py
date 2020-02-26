@@ -2,6 +2,7 @@
 
 from django.test import Client, RequestFactory, TestCase
 
+from tasks import views
 from tasks.models import Task, TaskStatus
 from users.models import CustomUser
 
@@ -35,3 +36,10 @@ class TaskTest(TestCase):
         self.assertTrue(isinstance(task, Task))
         self.assertEqual(task.__str__(), task.name)  # noqa: WPS609
         self.assertEqual(Task.objects.count(), 1)
+
+    def test_tasks_list(self):
+        """Test tasklist view."""
+        request = self.factory.get('/')
+        request.user = self.user
+        response = views.TaskList.as_view()(request)
+        self.assertEqual(response.status_code, 200)  # noqa: WPS432
