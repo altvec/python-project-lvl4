@@ -113,7 +113,7 @@ description = "A utility for ensuring Google-style docstrings stay up to date wi
 name = "darglint"
 optional = false
 python-versions = ">=3.5"
-version = "1.1.3"
+version = "1.2.0"
 
 [[package]]
 category = "main"
@@ -129,7 +129,7 @@ description = "A high-level Python Web framework that encourages rapid developme
 name = "django"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.3"
+version = "3.0.4"
 
 [package.dependencies]
 asgiref = ">=3.2,<4.0"
@@ -751,7 +751,7 @@ description = "Non-validating SQL parser"
 name = "sqlparse"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "0.3.0"
+version = "0.3.1"
 
 [[package]]
 category = "dev"
@@ -863,7 +863,7 @@ marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.0"
+version = "3.1.0"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
@@ -944,16 +944,16 @@ coverage = [
     {file = "coverage-5.0.3.tar.gz", hash = "sha256:77afca04240c40450c331fa796b3eab6f1e15c5ecf8bf2b8bee9706cd5452fef"},
 ]
 darglint = [
-    {file = "darglint-1.1.3-py3-none-any.whl", hash = "sha256:7ac9a9ef8db58f2ceef0c241fc6d9bb0c2dfb3ed0ddbf09f97954e888f8e0d20"},
-    {file = "darglint-1.1.3.tar.gz", hash = "sha256:1aff09922bb0b7167c4ea27e4ce1cfb670b9aca32d8bfe5232f82758e025bbb5"},
+    {file = "darglint-1.2.0-py3-none-any.whl", hash = "sha256:748f53c0c73ce7cf0b97f77aea8da38145122db32969150001918700ff9689c7"},
+    {file = "darglint-1.2.0.tar.gz", hash = "sha256:5dccce27e1cf49a9f566f513504c85d26e595e4f086987ffd909f5913bad5ad7"},
 ]
 dj-database-url = [
     {file = "dj-database-url-0.5.0.tar.gz", hash = "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163"},
     {file = "dj_database_url-0.5.0-py2.py3-none-any.whl", hash = "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"},
 ]
 django = [
-    {file = "Django-3.0.3-py3-none-any.whl", hash = "sha256:c91c91a7ad6ef67a874a4f76f58ba534f9208412692a840e1d125eb5c279cb0a"},
-    {file = "Django-3.0.3.tar.gz", hash = "sha256:2f1ba1db8648484dd5c238fb62504777b7ad090c81c5f1fd8d5eb5ec21b5f283"},
+    {file = "Django-3.0.4-py3-none-any.whl", hash = "sha256:89e451bfbb815280b137e33e454ddd56481fdaa6334054e6e031041ee1eda360"},
+    {file = "Django-3.0.4.tar.gz", hash = "sha256:50b781f6cbeb98f673aa76ed8e572a019a45e52bdd4ad09001072dfd91ab07c8"},
 ]
 django-bootstrap4 = [
     {file = "django-bootstrap4-1.1.1.tar.gz", hash = "sha256:39f97cbce85eb66f6d76be2029bae171bd3863d0c6932b1c2dae7f299c569b90"},
@@ -1200,8 +1200,8 @@ soupsieve = [
     {file = "soupsieve-2.0.tar.gz", hash = "sha256:e914534802d7ffd233242b785229d5ba0766a7f487385e3f714446a07bf540ae"},
 ]
 sqlparse = [
-    {file = "sqlparse-0.3.0-py2.py3-none-any.whl", hash = "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177"},
-    {file = "sqlparse-0.3.0.tar.gz", hash = "sha256:7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"},
+    {file = "sqlparse-0.3.1-py2.py3-none-any.whl", hash = "sha256:022fb9c87b524d1f7862b3037e541f68597a730a8843245c349fc93e1643dc4e"},
+    {file = "sqlparse-0.3.1.tar.gz", hash = "sha256:e162203737712307dfe78860cc56c8da8a852ab2ee33750e33aeadf38d12c548"},
 ]
 stevedore = [
     {file = "stevedore-1.32.0-py2.py3-none-any.whl", hash = "sha256:a4e7dc759fb0f2e3e2f7d8ffe2358c19d45b9b8297f393ef1256858d82f69c9b"},
@@ -1234,6 +1234,6 @@ whitenoise = [
     {file = "whitenoise-5.0.1.tar.gz", hash = "sha256:0f9137f74bd95fa54329ace88d8dc695fbe895369a632e35f7a136e003e41d73"},
 ]
 zipp = [
-    {file = "zipp-3.0.0-py3-none-any.whl", hash = "sha256:12248a63bbdf7548f89cb4c7cda4681e537031eda29c02ea29674bc6854460c2"},
-    {file = "zipp-3.0.0.tar.gz", hash = "sha256:7c0f8e91abc0dc07a5068f315c52cb30c66bfbc581e5b50704c8a2f6ebae794a"},
+    {file = "zipp-3.1.0-py3-none-any.whl", hash = "sha256:aa36550ff0c0b7ef7fa639055d797116ee891440eac1a56f378e2d3179e0320b"},
+    {file = "zipp-3.1.0.tar.gz", hash = "sha256:c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"},
 ]
