@@ -19,7 +19,7 @@ class TaskTest(TestCase):
         )
         self.client = Client()
 
-    def create_task(self, name='Test task name'):
+    def createTask(self, name='Test task name'):
         """Create test task."""
         status = TaskStatus.objects.create(name='New')
         return Task.objects.create(
@@ -32,7 +32,7 @@ class TaskTest(TestCase):
 
     def test_task_create(self):
         """Test task creation."""
-        task = self.create_task()
+        task = self.createTask()
         self.assertTrue(isinstance(task, Task))
         self.assertEqual(task.__str__(), task.name)  # noqa: WPS609
         self.assertEqual(Task.objects.count(), 1)
