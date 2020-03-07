@@ -19,7 +19,7 @@ class TaskTest(TestCase):
         )
         self.client = Client()
 
-    def createTask(self, name='Test task name'):
+    def createTask(self, name='Test task name'):  # noqa: N802
         """Create test task."""
         status = TaskStatus.objects.create(name='New')
         return Task.objects.create(
