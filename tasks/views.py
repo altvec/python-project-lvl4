@@ -55,7 +55,7 @@ class TaskCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     fields = ['name', 'description', 'tags', 'assigned_to', 'status']
     template_name = 'task_create.html'
     success_url = reverse_lazy('tasks-home')
-    success_message = 'Task %(name)s was created successfully.'
+    success_message = 'Task %(name)s was created successfully.'  # noqa: WPS323
 
     def form_valid(self, form):
         """Validate form."""
