@@ -136,10 +136,10 @@ description = "Bootstrap support for Django projects"
 name = "django-bootstrap4"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "2.0.0"
+version = "2.0.1"
 
 [package.dependencies]
-beautifulsoup4 = ">=4.9.1,<5.0.0"
+beautifulsoup4 = ">=4.8.0,<5.0.0"
 django = ">=2.2,<4.0"
 
 [package.dependencies.importlib-metadata]
@@ -742,7 +742,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "355462b7d355b46253fc4f7d86b5dc4cd6df86580f50ece1707c3ef2a49ecd63"
+content-hash = "c908565071533131357a17df4edbed7002ed61e32ee60242bea7869551ea8f8a"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -825,8 +825,8 @@ django = [
     {file = "Django-3.0.7.tar.gz", hash = "sha256:5052b34b34b3425233c682e0e11d658fd6efd587d11335a0203d827224ada8f2"},
 ]
 django-bootstrap4 = [
-    {file = "django-bootstrap4-2.0.0.tar.gz", hash = "sha256:2618205322306b1cf3e4e67ec9d42cdf30b2656bf06d2b65d17498b0b2667271"},
-    {file = "django_bootstrap4-2.0.0-py3-none-any.whl", hash = "sha256:ca51246ea4a0bc06f7fa4305cefe7f7700cc09e7da1280f7bea5213470bb673d"},
+    {file = "django-bootstrap4-2.0.1.tar.gz", hash = "sha256:f1fbe0ab1e6357072642b25c0e7473b3bfe31d9f28eaacad237474a94f8df792"},
+    {file = "django_bootstrap4-2.0.1-py3-none-any.whl", hash = "sha256:7baf22ab8570b5147b566b3431738c4f3558604ad7a8140f69d784a04c9eb1c8"},
 ]
 django-filter = [
     {file = "django-filter-2.2.0.tar.gz", hash = "sha256:c3deb57f0dd7ff94d7dce52a047516822013e2b441bed472b722a317658cfd14"},
