@@ -136,7 +136,7 @@ description = "Bootstrap support for Django projects"
 name = "django-bootstrap4"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "2.0.1"
+version = "2.1.1"
 
 [package.dependencies]
 beautifulsoup4 = ">=4.8.0,<5.0.0"
@@ -145,6 +145,9 @@ django = ">=2.2,<4.0"
 [package.dependencies.importlib-metadata]
 python = "<3.8"
 version = ">=1.5.0,<2.0.0"
+
+[package.extras]
+docs = ["sphinx (>=2.4,<3.0)", "sphinx_rtd_theme (>=0.4.3,<0.5.0)", "m2r (>=0.2.1,<0.3.0)"]
 
 [[package]]
 category = "main"
@@ -742,7 +745,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "a3eb9c955e07e3ae7c439454bb21204d68b8e5027e049ec09de2af66bac9af89"
+content-hash = "30ee811c190e6484b9899fc7ecc78a5185fa4a09d5ab5652cc3cf7bb6968458f"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -825,8 +828,8 @@ django = [
     {file = "Django-3.0.7.tar.gz", hash = "sha256:5052b34b34b3425233c682e0e11d658fd6efd587d11335a0203d827224ada8f2"},
 ]
 django-bootstrap4 = [
-    {file = "django-bootstrap4-2.0.1.tar.gz", hash = "sha256:f1fbe0ab1e6357072642b25c0e7473b3bfe31d9f28eaacad237474a94f8df792"},
-    {file = "django_bootstrap4-2.0.1-py3-none-any.whl", hash = "sha256:7baf22ab8570b5147b566b3431738c4f3558604ad7a8140f69d784a04c9eb1c8"},
+    {file = "django-bootstrap4-2.1.1.tar.gz", hash = "sha256:69a68ecf8d6526c33b4c79b51ac07f3a55d3740c9a126171325133108590fff8"},
+    {file = "django_bootstrap4-2.1.1-py3-none-any.whl", hash = "sha256:b0236cdba9b64f03889cd2555c35586ab645a75260b088429ca98a47e80ef798"},
 ]
 django-filter = [
     {file = "django-filter-2.3.0.tar.gz", hash = "sha256:11e63dd759835d9ba7a763926ffb2662cf8a6dcb4c7971a95064de34dbc7e5af"},
@@ -1005,6 +1008,7 @@ pyyaml = [
     {file = "PyYAML-5.3.tar.gz", hash = "sha256:e9f45bd5b92c7974e59bcd2dcc8631a6b6cc380a904725fce7bc08872e691615"},
 ]
 requests = [
+    {file = "requests-2.23.0-py2.7.egg", hash = "sha256:5d2d0ffbb515f39417009a46c14256291061ac01ba8f875b90cad137de83beb4"},
     {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},
     {file = "requests-2.23.0.tar.gz", hash = "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"},
 ]
