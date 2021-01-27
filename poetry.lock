@@ -559,7 +559,7 @@ docutils = ">=0.11,<1.0"
 
 [[package]]
 name = "rollbar"
-version = "0.15.1"
+version = "0.15.2"
 description = "Easy and powerful exception tracking with Rollbar. Send messages and exceptions with arbitrary context, get back aggregates, and debug production issues quickly."
 category = "main"
 optional = false
@@ -719,7 +719,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "2c8d0a358f0e2a22045daa5247237aed5334223fa65faddfef2948a989e82ad3"
+content-hash = "525099a3a94e89bac5a0696ce18effa2cc46d1521f9384fce098cc6c54d79c0d"
 
 [metadata.files]
 asgiref = [
@@ -1009,7 +1009,7 @@ restructuredtext-lint = [
     {file = "restructuredtext_lint-1.3.2.tar.gz", hash = "sha256:d3b10a1fe2ecac537e51ae6d151b223b78de9fafdd50e5eb6b08c243df173c80"},
 ]
 rollbar = [
-    {file = "rollbar-0.15.1.tar.gz", hash = "sha256:96b63df27a47232aa16a142d2f5812073f8bf7db2b81c5f7981b9a4d4659468c"},
+    {file = "rollbar-0.15.2.tar.gz", hash = "sha256:5e80fe7c9b15e84f5b72e45ebaa85bba1c13234e447a5f3801d094eb379c2d0e"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
