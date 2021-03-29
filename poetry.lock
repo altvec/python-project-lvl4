@@ -504,8 +504,8 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "python-dotenv"
-version = "0.15.0"
-description = "Add .env support to your django/flask apps in development and deployments"
+version = "0.16.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
 category = "main"
 optional = false
 python-versions = "*"
@@ -712,7 +712,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "0845ed8eb4064a9f0b712f359072ed9b83981e13cc8b35a5508f401682bd59eb"
+content-hash = "15c1f6554101275fb82d250f4b973eae45a5db229dbf5c7c9c9d6c31ca0c6cf8"
 
 [metadata.files]
 asgiref = [
@@ -975,8 +975,8 @@ pygments = [
     {file = "Pygments-2.7.3.tar.gz", hash = "sha256:ccf3acacf3782cbed4a989426012f1c535c9a90d3a7fc3f16d231b9372d2b716"},
 ]
 python-dotenv = [
-    {file = "python-dotenv-0.15.0.tar.gz", hash = "sha256:587825ed60b1711daea4832cf37524dfd404325b7db5e25ebe88c495c9f807a0"},
-    {file = "python_dotenv-0.15.0-py2.py3-none-any.whl", hash = "sha256:0c8d1b80d1a1e91717ea7d526178e3882732420b03f08afea0406db6402e220e"},
+    {file = "python-dotenv-0.16.0.tar.gz", hash = "sha256:9fa413c37d4652d3fa02fea0ff465c384f5db75eab259c4fc5d0c5b8bf20edd4"},
+    {file = "python_dotenv-0.16.0-py2.py3-none-any.whl", hash = "sha256:31d752f5b748f4e292448c9a0cac6a08ed5e6f4cefab85044462dcad56905cec"},
 ]
 pytz = [
     {file = "pytz-2020.4-py2.py3-none-any.whl", hash = "sha256:5c55e189b682d420be27c6995ba6edce0c0a77dd67bfbe2ae6607134d5851ffd"},
