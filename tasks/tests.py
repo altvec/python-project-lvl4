@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django.test import Client, RequestFactory, TestCase
-
 from tasks import views
 from tasks.models import Task, TaskStatus
 from users.models import CustomUser

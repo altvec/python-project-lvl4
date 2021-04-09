@@ -11,7 +11,6 @@ from django.views.generic import (
     UpdateView,
 )
 from django.views.generic.edit import FormMixin
-
 from tasks.filters import TaskFilter
 from tasks.forms import TaskStatusForm
 from tasks.models import Task, TaskStatus

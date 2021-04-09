@@ -3,7 +3,6 @@
 from django.db import models
 from django.urls import reverse
 from taggit.managers import TaggableManager
-
 from users.models import CustomUser
 
 

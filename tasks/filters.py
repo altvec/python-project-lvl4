@@ -2,7 +2,6 @@
 
 import django_filters
 from taggit.forms import TagField
-
 from tasks.models import Task
 
 

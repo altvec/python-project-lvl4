@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib.auth import forms
-
 from users.models import CustomUser
 
 

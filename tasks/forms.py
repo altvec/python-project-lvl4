@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
-
 from tasks.models import Task, TaskStatus
 
 
