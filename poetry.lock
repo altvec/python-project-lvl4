@@ -158,14 +158,14 @@ Django = ">=2.2"
 
 [[package]]
 name = "django-taggit"
-version = "1.4.0"
+version = "1.5.0"
 description = "django-taggit is a reusable Django application for simple tagging."
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-Django = ">=1.11"
+Django = ">=2.2"
 
 [[package]]
 name = "docutils"
@@ -716,7 +716,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "719a3ab4f420cf54a79ae8a473d3b23c56b271a61156b509fa3c8de517c8e27b"
+content-hash = "88de4373825ff40a2d54438812dec974c36344346c1c460c702d316b63c07c57"
 
 [metadata.files]
 asgiref = [
@@ -827,8 +827,8 @@ django-filter = [
     {file = "django_filter-2.4.0-py3-none-any.whl", hash = "sha256:e00d32cebdb3d54273c48f4f878f898dced8d5dfaad009438fe61ebdf535ace1"},
 ]
 django-taggit = [
-    {file = "django-taggit-1.4.0.tar.gz", hash = "sha256:b9ed6e94bad0bed3bf062a6be7ee3db117fda02c6419c680d614197364ea018b"},
-    {file = "django_taggit-1.4.0-py3-none-any.whl", hash = "sha256:9f947b7fe330875ac7f05f9616f42ef90df9253b639ca102a9449dd34cec0cab"},
+    {file = "django-taggit-1.5.0.tar.gz", hash = "sha256:9e1b4772af339e4d49921488e401337c04fe8cad8afcc5080f04a38108c464d5"},
+    {file = "django_taggit-1.5.0-py3-none-any.whl", hash = "sha256:e8d4300e2226f6fa7ad55a8449a482486142d619131a5bc2dd744ff65e7f70ab"},
 ]
 docutils = [
     {file = "docutils-0.17.1-py2.py3-none-any.whl", hash = "sha256:cf316c8370a737a022b72b56874f6602acf974a37a9fba42ec2876387549fc61"},
