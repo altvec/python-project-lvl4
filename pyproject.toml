@@ -20,7 +20,7 @@ django-filter = "^21.1"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.15.3"
-coverage = "^5.5"
+coverage = "^6.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
