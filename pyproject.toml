@@ -19,7 +19,7 @@ django-taggit = "^1.5.1"
 django-filter = "^21.1"
 
 [tool.poetry.dev-dependencies]
-wemake-python-styleguide = "^0.15.3"
+wemake-python-styleguide = "^0.16.0"
 coverage = "^6.2"
 
 [build-system]
