@@ -1,6 +1,6 @@
-asgiref==3.4.1; python_version >= "3.6" \
-    --hash=sha256:ffc141aa908e6f175673e7b1b3b7af4fdb0ecb738fc5c8b88f69f055c2415214 \
-    --hash=sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9
+asgiref==3.5.1; python_version >= "3.6" \
+    --hash=sha256:45a429524fba18aba9d512498b19d220c4d628e75b40cf5c627524dbaebc5cc1 \
+    --hash=sha256:fddeea3c53fa99d0cdb613c3941cc6e52d822491fc2753fba25768fb5bf4e865
 beautifulsoup4==4.10.0; python_full_version > "3.0.0" and python_version >= "3.6" \
     --hash=sha256:9a315ce70049920ea4572a4055bc4bd700c940521d36fc858205ad4fcde149bf \
     --hash=sha256:c23ad23c521d818955a4151a67d81580319d4bf548d3d49f4223ae041ff98891
